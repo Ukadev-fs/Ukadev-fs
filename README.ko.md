@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:ffafcc,50:ffc8dd,100:cdb4db&height=210&section=header&text=ukadev%20%E2%99%A1&fontSize=66&fontColor=6d3b5e&fontAlignY=36&animation=fadeIn&desc=%E2%8B%86%20%EB%94%94%EC%8A%A4%EC%BD%94%EB%93%9C%20%EB%B4%87%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%E2%8B%86%20nobilitus%20%E2%8B%86&descSize=17&descAlignY=58" width="100%" alt="ukadev ♡" />
+<img src="https://capsule-render.vercel.app/api?type=rounded&color=0:ffafcc,50:ffc8dd,100:cdb4db&height=190&section=header&text=ukadev%20%E2%99%A1&fontSize=66&fontColor=6d3b5e&fontAlignY=36&animation=fadeIn&desc=%E2%8B%86%20%EB%94%94%EC%8A%A4%EC%BD%94%EB%93%9C%20%EB%B4%87%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%E2%8B%86%20nobilitus%20%E2%8B%86&descSize=17&descAlignY=58" width="100%" alt="ukadev ♡" />
 
 <p align="center">
   ⋆ ˚｡⋆୨♡୧⋆ ˚｡⋆<br />
@@ -87,8 +87,7 @@
 
 <p align="center">
   ⋆ ˚｡⋆୨♡୧⋆ ˚｡⋆<br />
-  들러줘서 고마워요! ≽^•⩊•^≼<br />
-  ᓚ₍⑅^..^₎♡
+  ≽^•⩊•^≼ ᓚ₍⑅^..^₎♡
 </p>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:cdb4db,50:ffc8dd,100:ffafcc&height=110&section=footer" width="100%" alt="" />
+<img src="https://capsule-render.vercel.app/api?type=rounded&color=0:cdb4db,50:ffc8dd,100:ffafcc&height=90&section=footer&text=%EB%93%A4%EB%9F%AC%EC%A4%98%EC%84%9C%20%EA%B3%A0%EB%A7%88%EC%9B%8C%EC%9A%94%20%E2%99%A1&fontSize=26&fontColor=6d3b5e&fontAlignY=55" width="100%" alt="들러줘서 고마워요 ♡" />

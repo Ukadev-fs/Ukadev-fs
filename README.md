@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:ffafcc,50:ffc8dd,100:cdb4db&height=210&section=header&text=ukadev%20%E2%99%A1&fontSize=66&fontColor=6d3b5e&fontAlignY=36&animation=fadeIn&desc=%E2%8B%86%20discord%20bot%20dev%20%E2%8B%86%20nobilitus%20%E2%8B%86&descSize=17&descAlignY=58" width="100%" alt="ukadev ♡" />
+<img src="https://capsule-render.vercel.app/api?type=rounded&color=0:ffafcc,50:ffc8dd,100:cdb4db&height=190&section=header&text=ukadev%20%E2%99%A1&fontSize=66&fontColor=6d3b5e&fontAlignY=36&animation=fadeIn&desc=%E2%8B%86%20discord%20bot%20dev%20%E2%8B%86%20nobilitus%20%E2%8B%86&descSize=17&descAlignY=58" width="100%" alt="ukadev ♡" />
 
 <p align="center">
   ⋆ ˚｡⋆୨♡୧⋆ ˚｡⋆<br />
@@ -87,8 +87,7 @@
 
 <p align="center">
   ⋆ ˚｡⋆୨♡୧⋆ ˚｡⋆<br />
-  thanks for stopping by ! ≽^•⩊•^≼<br />
-  ᓚ₍⑅^..^₎♡
+  ≽^•⩊•^≼ ᓚ₍⑅^..^₎♡
 </p>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:cdb4db,50:ffc8dd,100:ffafcc&height=110&section=footer" width="100%" alt="" />
+<img src="https://capsule-render.vercel.app/api?type=rounded&color=0:cdb4db,50:ffc8dd,100:ffafcc&height=90&section=footer&text=thanks%20for%20stopping%20by%20%E2%99%A1&fontSize=26&fontColor=6d3b5e&fontAlignY=55" width="100%" alt="thanks for stopping by ♡" />
