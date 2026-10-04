@@ -1,75 +1,76 @@
-<img src="https://capsule-render.vercel.app/api?type=rounded&color=0:ffafcc,50:ffc8dd,100:cdb4db&height=190&section=header&text=ukadev%20%E2%99%A1&fontSize=66&fontColor=6d3b5e&fontAlignY=36&animation=fadeIn&desc=%E2%8B%86%20discord%20bot%20dev%20%E2%8B%86%20nobilitus%20%E2%8B%86&descSize=17&descAlignY=58" width="100%" alt="ukadev ♡" />
+<img src="https://capsule-render.vercel.app/api?type=rounded&color=0:ffafcc,50:ffc8dd,100:cdb4db&height=190&section=header&text=ukadev%20%E2%99%A1&fontSize=66&fontColor=6d3b5e&fontAlignY=36&animation=fadeIn&desc=%E2%8B%86%20discowd%20bot%20dev%20%E2%8B%86%20nyobiwitus%20%E2%8B%86&descSize=17&descAlignY=58" alt="ukadev ♡" />
 
 <p align="center">
   ⋆ ˚｡⋆୨♡୧⋆ ˚｡⋆<br />
-  <b>english</b> ⋆ <a href="https://github.com/Ukadev-fs/Ukadev-fs/blob/main/README.ko.md">한국어</a>
+  <b>engwish</b> ⋆ <a href="https://github.com/Ukadev-fs/Ukadev-fs/blob/main/README.ko.md">한국어</a>
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Comfortaa&weight=600&size=22&duration=3000&pause=1000&color=F472B6&center=true&vCenter=true&width=620&lines=hii%2C+i'm+ukadev+%E2%99%A1;i+make+discord+bots+(%CB%B6%E1%B5%94+%E1%B5%95+%E1%B5%94%CB%B6);ego+v2+is+here+%E2%9C%A7;talion+~+casino%2C+economy+%26+rpg" alt="hii, i'm ukadev ♡" />
+  <img src="https://readme-typing-svg.demolab.com?font=Comfortaa&weight=600&size=22&duration=3000&pause=1000&color=F472B6&center=true&vCenter=true&width=640&lines=h-hii%2C+i'm+ukadev+nya~+%E2%99%A1;i+make+discowd+bots+uwu;ego+v2+is+hewe+owo+%E2%9C%A7;tawion+~+casinyo%2C+econyomy+%26+wpg+%3Ew%3C" alt="h-hii, i'm ukadev nya~ ♡" />
 </p>
 
-## ˚₊‧꒰ა about me ໒꒱ ‧₊˚
+## ˚₊‧꒰ა about me ໒꒱ ‧₊˚ nya~
 
 <p align="center">
   ᯠ˶ ᯄ<br />
-  ૮₍ ˃ ⤙ ˂ ₎ა
+  ૮₍ ˃ ⤙ ˂ ₎ა<br />
+  /づ♡ hewwo !!
 </p>
 
-- ♡ hii, i'm **ukadev** ~ i make discord bots with my team, **nobilitus** (˶ᵔ ᵕ ᵔ˶)
-- ♡ i code things for fun, and i have quite a lot of imagination (,,>﹏<,,)
-- ♡ my bots speak french & english
-- ♡ my dream: make talion the #1 casino bot on discord ✧
+- ♡ h-hii~ i'm **ukadev** nya~ i make discowd bots with my team, **nyobiwitus** (˶ᵔ ᵕ ᵔ˶)
+- ♡ i code things fow fun, and i have quite a wot of imaginyation (,,>﹏<,,)
+- ♡ my bots speak fwench & engwish, nya~
+- ♡ my dweam: make tawion the #1 casinyo bot on discowd ✧ uwu
 
-## ˚₊‧꒰ა my lil bots ໒꒱ ‧₊˚
+## ˚₊‧꒰ა my wittwe bots ໒꒱ ‧₊˚ owo
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>🪞 ego <sup>v2 ✧ new !</sup></h3>
-      <em>clear & safe moderation</em>
-      <p>rewritten from scratch ~ slash commands only, and every reply is a neat little card ♡</p>
+      <h3>🪞 ego <sup>v2 ✧ nyew !</sup></h3>
+      <em>cweaw & safe modewation >w<</em>
+      <p>wewwitten fwom scwatch ~ swash commands onwy, and evewy wepwy is a nyeat wittwe cawd ♡</p>
       <ul>
-        <li>🛡️ anti-nuke, anti-raid, automod presets & verification on join</li>
-        <li>📋 pretty logs, with every action credited to the right mod</li>
-        <li>💾 nightly backups you can compare & restore</li>
-        <li>🎀 welcome cards drawn as images, role menus, scheduled announcements</li>
-        <li>🌍 french or english, following your discord language</li>
+        <li>🛡️ anti-nyuke, anti-waid, automod pwesets & vewification on join</li>
+        <li>📋 pwetty wogs, with evewy action cwedited to the wight mod uwu</li>
+        <li>💾 nyightwy backups you can compawe & westowe</li>
+        <li>🎀 wewcome cawds dwawn as images, wowe menyus, scheduwed annyouncements</li>
+        <li>🌍 fwench ow engwish, fowwowing youw discowd wanguage nya~</li>
       </ul>
-      <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
-      <img src="https://img.shields.io/badge/discord.js-v14-5865F2?style=flat-square&logo=discord&logoColor=white" alt="discord.js v14" />
-      <img src="https://img.shields.io/badge/version-v2-8b5cf6?style=flat-square" alt="Version 2" />
+      <img src="https://img.shields.io/badge/TypeScwipt-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+      <img src="https://img.shields.io/badge/discowd.js-v14-5865F2?style=flat-square&logo=discord&logoColor=white" alt="discord.js v14" />
+      <img src="https://img.shields.io/badge/vewsion-v2%20%E2%9C%A7-8b5cf6?style=flat-square" alt="Version 2" />
     </td>
     <td width="50%" valign="top">
       <h3>🪙 talion</h3>
-      <em>what goes around comes around</em>
-      <p>a casino, economy & rpg bot ~ every server gets its own economy and tunes it with <code>/config</code></p>
+      <em>what goes awound comes awound ฅ^•ﻌ•^ฅ</em>
+      <p>a casinyo, econyomy & wpg bot ~ evewy sewvew gets its own econyomy and tunyes it with <code>/config</code></p>
       <ul>
-        <li>🎰 blackjack, slots with a mystery jackpot, roulette, horse racing</li>
-        <li>🎭 criminal & civil reputation, jail, jobs, black market, achievements</li>
-        <li>🌍 french or english, following your discord language</li>
-        <li>🔒 talents are 100% virtual ~ never bought, never sold</li>
+        <li>🎰 bwackjack, swots with a mystewy jackpot, wouwette, howse wacing</li>
+        <li>🎭 cwiminyaw & civiw weputation, jaiw, jobs, bwack mawket, achievements</li>
+        <li>🌍 fwench ow engwish, fowwowing youw discowd wanguage</li>
+        <li>🔒 tawents awe 100% viwtuaw ~ nyevew bought, nyevew sowd :3</li>
       </ul>
-      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript" />
-      <img src="https://img.shields.io/badge/discord.js-v14-5865F2?style=flat-square&logo=discord&logoColor=white" alt="discord.js v14" />
-      <img src="https://img.shields.io/badge/status-in%20development-f472b6?style=flat-square" alt="Status: in development" />
+      <img src="https://img.shields.io/badge/JavaScwipt-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript" />
+      <img src="https://img.shields.io/badge/discowd.js-v14-5865F2?style=flat-square&logo=discord&logoColor=white" alt="discord.js v14" />
+      <img src="https://img.shields.io/badge/status-in%20devewopment%20%3Ew%3C-f472b6?style=flat-square" alt="Status: in development" />
     </td>
   </tr>
 </table>
 
-## ˚₊‧꒰ა tools i love ໒꒱ ‧₊˚
+## ˚₊‧꒰ა toows i wuv ໒꒱ ‧₊˚
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=nodejs,ts,js,discordjs,sqlite,express,nextjs,docker,git,github&perline=10" alt="Node.js, TypeScript, JavaScript, discord.js, SQLite, Express, Next.js, Docker, Git, GitHub" />
 </p>
 
-## ˚₊‧꒰ა right now ໒꒱ ‧₊˚
+## ˚₊‧꒰ა wight nyow ໒꒱ ‧₊˚
 
-- 🌷 polishing ego v2 with my friends' feedback
-- 🫧 building the nobilitus website: a page for each bot, plus all the docs
-- 🗺️ teaching my bots more languages
+- 🌷 powishing ego v2 with my fwiends' feedback uwu
+- 🫧 buiwding the nyobiwitus website: a page fow each bot, pwus aww the docs
+- 🗺️ teaching my bots mowe wanguages nya~
 
-## ˚₊‧꒰ა activity ໒꒱ ‧₊˚
+## ˚₊‧꒰ა activity ໒꒱ ‧₊˚ >w<
 
 <p align="center">
   <picture>
@@ -87,7 +88,7 @@
 
 <p align="center">
   ⋆ ˚｡⋆୨♡୧⋆ ˚｡⋆<br />
-  ≽^•⩊•^≼ ᓚ₍⑅^..^₎♡
+  ≽^•⩊•^≼ <i>*waves pawsies*</i> ᓚ₍⑅^..^₎♡
 </p>
 
-<img src="https://capsule-render.vercel.app/api?type=rounded&color=0:cdb4db,50:ffc8dd,100:ffafcc&height=90&section=footer&text=thanks%20for%20stopping%20by%20%E2%99%A1&fontSize=26&fontColor=6d3b5e&fontAlignY=55" width="100%" alt="thanks for stopping by ♡" />
+<img src="https://capsule-render.vercel.app/api?type=rounded&color=0:cdb4db,50:ffc8dd,100:ffafcc&height=90&section=footer&text=thx%20fow%20stopping%20by%20nya~%20%E2%99%A1&fontSize=26&fontColor=6d3b5e&fontAlignY=55" alt="thx fow stopping by nya~ ♡" />
