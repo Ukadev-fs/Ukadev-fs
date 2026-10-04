@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=rounded&color=0:ffafcc,50:ffc8dd,100:cdb4db&height=190&section=header&text=ukadev%20%E2%99%A1&fontSize=66&fontColor=6d3b5e&fontAlignY=36&animation=fadeIn&desc=%E2%8B%86%20%EB%94%94%EC%8A%A4%EC%BD%94%EB%93%9C%20%EB%B4%87%20%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%8B%A4%EB%83%A5%20%E2%8B%86%20nobilitus%20%E2%8B%86&descSize=17&descAlignY=58" alt="ukadev ♡" />
+<picture><img src="https://capsule-render.vercel.app/api?type=rounded&color=0:ffafcc,50:ffc8dd,100:cdb4db&height=190&section=header&text=ukadev%20%E2%99%A1&fontSize=66&fontColor=6d3b5e&fontAlignY=36&animation=fadeIn&desc=%E2%8B%86%20%EB%94%94%EC%8A%A4%EC%BD%94%EB%93%9C%20%EB%B4%87%20%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%8B%A4%EB%83%A5%20%E2%8B%86%20nobilitus%20%E2%8B%86&descSize=17&descAlignY=58" width="100%" alt="ukadev ♡" /></picture>
 
 <p align="center">
   ⋆ ˚｡⋆୨♡୧⋆ ˚｡⋆<br />
@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Jua&weight=600&size=22&duration=3000&pause=1000&color=F472B6&center=true&vCenter=true&width=640&lines=%EC%95%84%2C+%EC%95%88%EB%85%95~+ukadev%EB%8B%A4%EB%83%A5+%E2%99%A1;%EB%94%94%EC%8A%A4%EC%BD%94%EB%93%9C+%EB%B4%87+%EB%A7%8C%EB%93%A0%EB%8B%A4%EB%83%A5+uwu;ego+v2+%EB%82%98%EC%99%94%EB%8B%A4%EB%83%A5+owo+%E2%9C%A7;talion+~+%EC%B9%B4%EC%A7%80%EB%85%B8%2C+%EA%B2%BD%EC%A0%9C%2C+rpg+%3Ew%3C" alt="아, 안녕~ ukadev다냥 ♡" />
+  <picture><img src="https://readme-typing-svg.demolab.com?font=Jua&weight=600&size=22&duration=3000&pause=1000&color=F472B6&center=true&vCenter=true&width=640&lines=%EC%95%84%2C+%EC%95%88%EB%85%95~+ukadev%EB%8B%A4%EB%83%A5+%E2%99%A1;%EB%94%94%EC%8A%A4%EC%BD%94%EB%93%9C+%EB%B4%87+%EB%A7%8C%EB%93%A0%EB%8B%A4%EB%83%A5+uwu;ego+v2+%EB%82%98%EC%99%94%EB%8B%A4%EB%83%A5+owo+%E2%9C%A7;talion+~+%EC%B9%B4%EC%A7%80%EB%85%B8%2C+%EA%B2%BD%EC%A0%9C%2C+rpg+%3Ew%3C" alt="아, 안녕~ ukadev다냥 ♡" /></picture>
 </p>
 
 ## ˚₊‧꒰ა 소개다냥 ໒꒱ ‧₊˚
@@ -37,9 +37,9 @@
         <li>🎀 이미지로 그린 환영 카드, 역할 메뉴, 예약 공지</li>
         <li>🌍 디스코드 언어에 맞춰서 프랑스어나 영어로 대답한다냥~</li>
       </ul>
-      <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
-      <img src="https://img.shields.io/badge/discord.js-v14-5865F2?style=flat-square&logo=discord&logoColor=white" alt="discord.js v14" />
-      <img src="https://img.shields.io/badge/%EB%B2%84%EC%A0%84-v2%20%E2%9C%A7-8b5cf6?style=flat-square" alt="버전 v2" />
+      <picture><img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" /></picture>
+      <picture><img src="https://img.shields.io/badge/discord.js-v14-5865F2?style=flat-square&logo=discord&logoColor=white" alt="discord.js v14" /></picture>
+      <picture><img src="https://img.shields.io/badge/%EB%B2%84%EC%A0%84-v2%20%E2%9C%A7-8b5cf6?style=flat-square" alt="버전 v2" /></picture>
     </td>
     <td width="50%" valign="top">
       <h3>🪙 talion</h3>
@@ -51,9 +51,9 @@
         <li>🌍 디스코드 언어에 맞춰서 프랑스어나 영어로 대답한다냥</li>
         <li>🔒 탤런트는 100% 가상 화폐다냥 ~ 사거나 팔 수 없어용 :3</li>
       </ul>
-      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript" />
-      <img src="https://img.shields.io/badge/discord.js-v14-5865F2?style=flat-square&logo=discord&logoColor=white" alt="discord.js v14" />
-      <img src="https://img.shields.io/badge/%EC%83%81%ED%83%9C-%EA%B0%9C%EB%B0%9C%20%EC%A4%91%20%3Ew%3C-f472b6?style=flat-square" alt="상태: 개발 중" />
+      <picture><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript" /></picture>
+      <picture><img src="https://img.shields.io/badge/discord.js-v14-5865F2?style=flat-square&logo=discord&logoColor=white" alt="discord.js v14" /></picture>
+      <picture><img src="https://img.shields.io/badge/%EC%83%81%ED%83%9C-%EA%B0%9C%EB%B0%9C%20%EC%A4%91%20%3Ew%3C-f472b6?style=flat-square" alt="상태: 개발 중" /></picture>
     </td>
   </tr>
 </table>
@@ -61,7 +61,7 @@
 ## ˚₊‧꒰ა 좋아하는 도구 ໒꒱ ‧₊˚
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=nodejs,ts,js,discordjs,sqlite,express,nextjs,docker,git,github&perline=10" alt="Node.js, TypeScript, JavaScript, discord.js, SQLite, Express, Next.js, Docker, Git, GitHub" />
+  <picture><img src="https://skillicons.dev/icons?i=nodejs,ts,js,discordjs,sqlite,express,nextjs,docker,git,github&perline=10" alt="Node.js, TypeScript, JavaScript, discord.js, SQLite, Express, Next.js, Docker, Git, GitHub" /></picture>
 </p>
 
 ## ˚₊‧꒰ა 요즘 하는 일 ໒꒱ ‧₊˚
@@ -91,4 +91,4 @@
   ≽^•⩊•^≼ <i>*꾹꾹이*</i> ᓚ₍⑅^..^₎♡
 </p>
 
-<img src="https://capsule-render.vercel.app/api?type=rounded&color=0:cdb4db,50:ffc8dd,100:ffafcc&height=90&section=footer&text=%EB%93%A4%EB%9F%AC%EC%A4%98%EC%84%9C%20%EA%B3%A0%EB%A7%88%EC%9B%8C%EC%9A%A9%20%EB%83%A5~%20%E2%99%A1&fontSize=26&fontColor=6d3b5e&fontAlignY=55" alt="들러줘서 고마워용 냥~ ♡" />
+<picture><img src="https://capsule-render.vercel.app/api?type=rounded&color=0:cdb4db,50:ffc8dd,100:ffafcc&height=90&section=footer&text=%EB%93%A4%EB%9F%AC%EC%A4%98%EC%84%9C%20%EA%B3%A0%EB%A7%88%EC%9B%8C%EC%9A%A9%20%EB%83%A5~%20%E2%99%A1&fontSize=26&fontColor=6d3b5e&fontAlignY=55" width="100%" alt="들러줘서 고마워용 냥~ ♡" /></picture>
