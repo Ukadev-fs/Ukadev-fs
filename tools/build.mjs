@@ -5,6 +5,7 @@
 // Seuls les widgets animés (bannière, texte tapé, streak, serpent) restent en direct.
 //
 // Usage : cd tools && npm install && npm run build   (il faut `gh` connecté et Chrome)
+// Pour publier, passer par publish.mjs : il épingle les images à leur commit (voir ce fichier).
 
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
