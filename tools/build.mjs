@@ -11,6 +11,7 @@ import { createHash } from 'node:crypto';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { chromium } from 'playwright-core';
+import { banner, cat } from './art.mjs';
 
 const ROOT = join(import.meta.dirname, '..');
 const RAW = 'https://raw.githubusercontent.com/Ukadev-fs/Ukadev-fs/main';
@@ -23,11 +24,8 @@ const plus = (s) => enc(s).replace(/%20/g, '+');
 const shield = (s) => enc(s.replace(/-/g, '--').replace(/_/g, '__'));
 const plain = (s) => s.replace(/<[^>]+>/g, ' ').replace(/[*#<>"]/g, '').replace(/\s+/g, ' ').trim();
 
-const PALETTE = 'color=0:ffafcc,50:ffc8dd,100:cdb4db';
 const FOOT = 'color=0:cdb4db,50:ffc8dd,100:ffafcc';
 
-const header = (desc) =>
-  `https://capsule-render.vercel.app/api?type=rounded&${PALETTE}&height=190&section=header&text=${enc('ukadev ♡')}&fontSize=66&fontColor=6d3b5e&fontAlignY=36&animation=fadeIn&desc=${enc(desc)}&descSize=17&descAlignY=58`;
 const footer = (text) =>
   `https://capsule-render.vercel.app/api?type=rounded&${FOOT}&height=90&section=footer&text=${enc(text)}&fontSize=26&fontColor=6d3b5e&fontAlignY=55`;
 const typing = (font, lines) =>
@@ -50,7 +48,8 @@ const still = (src, alt, extra = '') => `<picture><img src="${src}"${extra} alt=
 const themed = (dark, light, alt, extra = '') =>
   `<picture><source media="(prefers-color-scheme: dark)" srcset="${dark}" /><img src="${light}"${extra} alt="${alt}" /></picture>`;
 
-const card = ({ title, tagline, intro, items, badges }) => `    <td width="50%" valign="top">
+// `wide` : la carte prend toute la ligne (sa liste passe sur deux colonnes, voir pageHtml).
+const card = ({ title, tagline, intro, items, badges }, wide = false) => `    <td ${wide ? 'colspan="2"' : 'width="50%"'} valign="top">
       <h3>${title}</h3>
       <em>${tagline}</em>
       <p>${intro}</p>
@@ -80,6 +79,9 @@ ${t.about.map((l) => `- ♡ ${l}`).join('\n')}`,
 ${card(t.ego)}
 ${card(t.talion)}
   </tr>
+  <tr>
+${card(t.echo, true)}
+  </tr>
 </table>`,
   },
   { id: 'tools', md: `## ${t.h.tools}\n\n<p align="center">${img(SKILLS, 'tools')}</p>` },
@@ -91,7 +93,7 @@ ${card(t.talion)}
 const en = {
   lang: 'en',
   file: 'README.md',
-  desc: '⋆ discowd bot dev ⋆ nyobiwitus ⋆',
+  banner: { title: 'ukadev', desc: '⋆ discowd bot dev ⋆ nyobiwitus ⋆', descFont: 'Fredoka' },
   other: 'https://github.com/Ukadev-fs/Ukadev-fs/blob/main/README.ko.md',
   switcher: '<b>engwish</b> ⋆ <a href="#">한국어</a>',
   font: 'Comfortaa',
@@ -111,15 +113,15 @@ const en = {
     'my dweam: make tawion the #1 casinyo bot on discowd ✧ uwu',
   ],
   ego: {
-    title: '🪞 ego <sup>v2 ✧ nyew !</sup>',
+    title: '🪞 ego <sup>v2 ✧</sup>',
     tagline: 'cweaw & safe modewation >w<',
     intro: 'wewwitten fwom scwatch ~ swash commands onwy, and evewy wepwy is a nyeat wittwe cawd ♡',
     items: [
-      '🛡️ anti-nyuke, anti-waid, automod pwesets & vewification on join',
+      '⚖️ sanctions expwainyed in DMs, and a case fiwe fow each membew',
       '📋 pwetty wogs, with evewy action cwedited to the wight mod uwu',
-      '💾 nyightwy backups you can compawe & westowe',
+      '🪪 /info cawds fow membews, sewvews, wowes & invites',
       '🎀 wewcome cawds dwawn as images, wowe menyus, scheduwed annyouncements',
-      '🌍 fwench ow engwish, fowwowing youw discowd wanguage nya~',
+      "🛡️ and when it's needed: anti-waid, automod pwesets, nyightwy backups",
     ],
     badges: [
       img(badge('', 'TypeScwipt', '3178C6', 'typescript'), 'TypeScript'),
@@ -143,6 +145,23 @@ const en = {
       img(badge('status', 'in devewopment >w<', 'f472b6'), 'Status: in development'),
     ],
   },
+  echo: {
+    title: '🎫 echo <sup>nyew ✧</sup>',
+    tagline: 'a weaw human answews evewy ticket ♡',
+    intro: 'membews open a ticket in a pwivate channyew ow wight in theiw DMs, and the staff takes it fwom thewe ~',
+    items: [
+      '💬 pwivate channyew ow DMs, the membew picks',
+      "🌸 a wive panyew: who's awound in the team, usuaw wait time",
+      '🙋 a “cwaim” button, twansfews, questions pew topic',
+      '📜 twanscwipts in the wogs, and a 1 to 5 ⭐ wating at the end',
+      '🌍 fwench ow engwish, fowwowing youw discowd wanguage',
+    ],
+    badges: [
+      img(badge('', 'TypeScwipt', '3178C6', 'typescript'), 'TypeScript'),
+      img(badge('discowd.js', 'v14', '5865F2', 'discord'), 'discord.js v14'),
+      img(badge('status', 'in devewopment >w<', 'f472b6'), 'Status: in development'),
+    ],
+  },
   now: [
     "🌷 powishing ego v2 with my fwiends' feedback uwu",
     '🫧 buiwding the nyobiwitus website: a page fow each bot, pwus aww the docs',
@@ -150,6 +169,7 @@ const en = {
   ],
   locale: '',
   streakAlt: 'GitHub streak',
+  catAlt: 'a pixel cat walking by',
   snakeAlt: 'A snake eating my contribution graph',
   bye: '≽^•⩊•^≼ <i>*waves pawsies*</i> ᓚ₍⑅^..^₎♡',
   footer: 'thx fow stopping by nya~ ♡',
@@ -158,7 +178,7 @@ const en = {
 const ko = {
   lang: 'ko',
   file: 'README.ko.md',
-  desc: '⋆ 디스코드 봇 개발자다냥 ⋆ nobilitus ⋆',
+  banner: { title: 'ukadev', desc: '⋆ 디스코드 봇 개발자다냥 ⋆ nobilitus ⋆', descFont: 'Jua' },
   other: 'https://github.com/Ukadev-fs',
   switcher: '<a href="#">engwish</a> ⋆ <b>한국어</b>',
   font: 'Jua',
@@ -178,15 +198,15 @@ const ko = {
     '꿈: talion을 디스코드 1등 카지노 봇으로 만들기 ✧ 냥냥',
   ],
   ego: {
-    title: '🪞 ego <sup>v2 ✧ 새거다냥!</sup>',
+    title: '🪞 ego <sup>v2 ✧</sup>',
     tagline: '깔끔하고 안전한 모더레이션이다냥 >w<',
     intro: '처음부터 다시 만들었다냥 ~ 슬래시 명령어만 쓰구, 모든 답장은 귀여운 카드로 온다냥 ♡',
     items: [
-      '🛡️ 안티 누크, 레이드 방지, AutoMod 프리셋, 입장 인증이다냥',
+      '⚖️ 제재는 DM으로 설명해주구, 멤버마다 기록부가 있다냥',
       '📋 예쁜 로그, 모든 조치는 진짜 모더레이터 이름으로 기록된다냥 uwu',
-      '💾 매일 밤 자동 백업, 비교하구 복원할 수 있다냥',
+      '🪪 멤버, 서버, 역할, 초대 링크를 보여주는 /info 카드',
       '🎀 이미지로 그린 환영 카드, 역할 메뉴, 예약 공지',
-      '🌍 디스코드 언어에 맞춰서 프랑스어나 영어로 대답한다냥~',
+      '🛡️ 필요할 땐: 레이드 방지, AutoMod 프리셋, 매일 밤 백업',
     ],
     badges: [
       img(badge('', 'TypeScript', '3178C6', 'typescript'), 'TypeScript'),
@@ -210,6 +230,23 @@ const ko = {
       img(badge('상태', '개발 중 >w<', 'f472b6'), '상태: 개발 중'),
     ],
   },
+  echo: {
+    title: '🎫 echo <sup>새거다냥 ✧</sup>',
+    tagline: '모든 티켓에 진짜 사람이 답한다냥 ♡',
+    intro: '멤버는 비공개 채널이나 DM에서 티켓을 열구, 스태프가 이어받는다냥 ~',
+    items: [
+      '💬 비공개 채널이나 DM, 멤버가 고른다냥',
+      '🌸 실시간 패널: 지금 있는 스태프, 평소 대기 시간',
+      '🙋 「담당하기」 버튼, 티켓 넘기기, 주제별 질문',
+      '📜 로그에 남는 기록, 끝나면 별점 1~5 ⭐',
+      '🌍 디스코드 언어에 맞춰서 프랑스어나 영어로 대답한다냥',
+    ],
+    badges: [
+      img(badge('', 'TypeScript', '3178C6', 'typescript'), 'TypeScript'),
+      img(badge('discord.js', 'v14', '5865F2', 'discord'), 'discord.js v14'),
+      img(badge('상태', '개발 중 >w<', 'f472b6'), '상태: 개발 중'),
+    ],
+  },
   now: [
     '🌷 친구들 피드백으로 ego v2 다듬는 중이다냥',
     '🫧 nobilitus 웹사이트 만드는 중: 봇별 페이지랑 문서 전부',
@@ -217,6 +254,7 @@ const ko = {
   ],
   locale: 'ko',
   streakAlt: 'GitHub 연속 기여',
+  catAlt: '지나가는 픽셀 고양이',
   snakeAlt: '기여 그래프를 먹는 뱀',
   bye: '≽^•⩊•^≼ <i>*꾹꾹이*</i> ᓚ₍⑅^..^₎♡',
   footer: '들러줘서 고마워용 냥~ ♡',
@@ -235,6 +273,8 @@ const pageHtml = (theme, blocks) => `<!doctype html><html><head><meta charset="u
   .markdown-body.fit { width: max-content; padding: 2px 12px; }
   .markdown-body .anchor { display: none; }
   .markdown-body table tr, .markdown-body table td { background: transparent !important; }
+  #s-bots tr:nth-child(2) ul { columns: 2; column-gap: 32px; }
+  #s-bots li { break-inside: avoid; }
 </style></head><body>
 ${blocks.map((b) => `<article class="markdown-body${b.fit ? ' fit' : ''}" id="s-${b.id}">${b.html}</article>`).join('\n')}
 </body></html>`;
@@ -243,7 +283,16 @@ const browser = await chromium.launch({ channel: 'chrome' });
 const context = await browser.newContext({ deviceScaleFactor: 2, viewport: { width: WIDTH + 40, height: 1200 } });
 const page = await context.newPage();
 
+/** Écrit un dessin dans assets/ et renvoie son adresse, avec le hash pour le cache de GitHub. */
+const asset = (path, content) => {
+  mkdirSync(join(ROOT, 'assets', path, '..'), { recursive: true });
+  writeFileSync(join(ROOT, 'assets', path), content);
+  return `${RAW}/assets/${path}?v=${createHash('sha1').update(content).digest('hex').slice(0, 8)}`;
+};
+const catUrl = asset('cat.svg', cat());
+
 for (const t of [en, ko]) {
+  const bannerUrl = asset(`${t.lang}/banner.svg`, await banner(t.banner));
   const blocks = sections(t).map((s) => ({ ...s, html: renderMarkdown(s.md), alt: plain(s.md) }));
   const shots = {};
   mkdirSync(join(ROOT, 'assets', t.lang), { recursive: true });
@@ -274,7 +323,7 @@ for (const t of [en, ko]) {
   };
   const s = streak(t.locale);
 
-  const readme = `${still(header(t.desc), 'ukadev ♡', ' width="100%"')}
+  const readme = `${still(bannerUrl, 'ukadev ♡', ' width="100%"')}
 
 <p align="center"><a href="${t.other}">${shot('lang')}</a></p>
 
@@ -295,6 +344,8 @@ ${shot('activity')}
 <p align="center">${themed(`${SNAKE}/snake-dark.svg`, `${SNAKE}/snake.svg`, t.snakeAlt)}</p>
 
 <p align="center">${shot('bye')}</p>
+
+${still(catUrl, t.catAlt, ' width="100%"')}
 
 ${still(footer(t.footer), t.footer, ' width="100%"')}
 `;
