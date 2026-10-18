@@ -13,6 +13,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { chromium } from 'playwright-core';
 import { banner, cat } from './art.mjs';
+import { posterHtml } from './poster.mjs';
 
 const ROOT = join(import.meta.dirname, '..');
 const RAW = 'https://raw.githubusercontent.com/Ukadev-fs/Ukadev-fs/main';
@@ -21,8 +22,6 @@ const THEMES = ['dark', 'light'];
 
 const enc = encodeURIComponent;
 const plus = (s) => enc(s).replace(/%20/g, '+');
-// shields.io : "-" sépare label et message, "_" vaut une espace ; on les double pour les garder.
-const shield = (s) => enc(s.replace(/-/g, '--').replace(/_/g, '__'));
 const plain = (s) => s.replace(/<[^>]+>/g, ' ').replace(/[*#<>"]/g, '').replace(/\s+/g, ' ').trim();
 
 const FOOT = 'color=0:cdb4db,50:ffc8dd,100:ffafcc';
@@ -31,8 +30,6 @@ const footer = (text) =>
   `https://capsule-render.vercel.app/api?type=rounded&${FOOT}&height=90&section=footer&text=${enc(text)}&fontSize=26&fontColor=6d3b5e&fontAlignY=55`;
 const typing = (font, lines) =>
   `https://readme-typing-svg.demolab.com?font=${font}&weight=600&size=22&duration=3000&pause=1000&color=F472B6&center=true&vCenter=true&width=640&lines=${lines.map(plus).join(';')}`;
-const badge = (label, message, color, logo, logoColor = 'white') =>
-  `https://img.shields.io/badge/${label ? `${shield(label)}-` : ''}${shield(message)}-${color}?style=flat-square${logo ? `&logo=${logo}&logoColor=${logoColor}` : ''}`;
 const streak = (locale) => {
   const base = `https://streak-stats.demolab.com?user=Ukadev-fs${locale ? `&locale=${locale}` : ''}&hide_border=true&border_radius=18`;
   return {
@@ -41,6 +38,8 @@ const streak = (locale) => {
   };
 };
 const SNAKE = 'https://raw.githubusercontent.com/Ukadev-fs/Ukadev-fs/output';
+// Redessiné chaque heure par .github/workflows/sky.yml (tools/sky.mjs), sur sa propre branche.
+const SKY = 'https://raw.githubusercontent.com/Ukadev-fs/Ukadev-fs/sky';
 const SKILLS = 'https://skillicons.dev/icons?i=nodejs,ts,js,discordjs,sqlite,express,nextjs,docker,git,github&perline=10';
 
 const img = (src, alt) => `<img src="${src}" alt="${alt}" />`;
@@ -48,17 +47,6 @@ const img = (src, alt) => `<img src="${src}" alt="${alt}" />`;
 const still = (src, alt, extra = '') => `<picture><img src="${src}"${extra} alt="${alt}" /></picture>`;
 const themed = (dark, light, alt, extra = '') =>
   `<picture><source media="(prefers-color-scheme: dark)" srcset="${dark}" /><img src="${light}"${extra} alt="${alt}" /></picture>`;
-
-// `wide` : la carte prend toute la ligne (sa liste passe sur deux colonnes, voir pageHtml).
-const card = ({ title, tagline, intro, items, badges }, wide = false) => `    <td ${wide ? 'colspan="2"' : 'width="50%"'} valign="top">
-      <h3>${title}</h3>
-      <em>${tagline}</em>
-      <p>${intro}</p>
-      <ul>
-${items.map((i) => `        <li>${i}</li>`).join('\n')}
-      </ul>
-${badges.map((b) => `      ${b}`).join('\n')}
-    </td>`;
 
 // Blocs de texte figés en image. `fit` : image à la taille du texte, centrée.
 const sections = (t) => [
@@ -73,17 +61,7 @@ ${t.about.map((l) => `- ♡ ${l}`).join('\n')}`,
   },
   {
     id: 'bots',
-    md: `## ${t.h.bots}
-
-<table>
-  <tr>
-${card(t.ego)}
-${card(t.talion)}
-  </tr>
-  <tr>
-${card(t.echo, true)}
-  </tr>
-</table>`,
+    md: `## ${t.h.bots}`,
   },
   { id: 'tools', md: `## ${t.h.tools}\n\n<p align="center">${img(SKILLS, 'tools')}</p>` },
   { id: 'now', md: `## ${t.h.now}\n\n${t.now.map((l) => `- ${l}`).join('\n')}` },
@@ -98,7 +76,7 @@ const en = {
   other: 'https://github.com/Ukadev-fs/Ukadev-fs/blob/main/README.ko.md',
   switcher: '<b>engwish</b> ⋆ <a href="#">한국어</a>',
   font: 'Comfortaa',
-  typing: ["h-hii, i'm ukadev nya~ ♡", 'i make discowd bots uwu', 'ego v2 is hewe owo ✧', 'tawion ~ casinyo, econyomy & wpg >w<'],
+  typing: ["h-hii, i'm ukadev nya~ ♡", 'i make discowd bots uwu', 'woxy ~ music fow cozy nyights ♪', 'ewis ~ coming soon to make you twain >:3'],
   h: {
     about: '˚₊‧꒰ა about me ໒꒱ ‧₊˚ nya~',
     bots: '˚₊‧꒰ა my wittwe bots ໒꒱ ‧₊˚ owo',
@@ -110,67 +88,31 @@ const en = {
   about: [
     "h-hii~ i'm **ukadev** nya~ i make discowd bots with my team, **nyobiwitus** (˶ᵔ ᵕ ᵔ˶)",
     'i code things fow fun, and i have quite a wot of imaginyation (,,>﹏<,,)',
-    'my bots speak fwench & engwish, nya~',
-    'my dweam: make tawion the #1 casinyo bot on discowd ✧ uwu',
+    'i awways want to weawn mowe, and i wuv using my bwain ✧',
+    'games? way too many to pick just a few >w<',
+    "music in my eaws 24/7 ♪ that's why woxy exists uwu",
+    'my dweam: make woxy & ewis feew twuwy awive ♡',
   ],
-  ego: {
-    title: '🪞 ego <sup>v2 ✧</sup>',
-    tagline: 'cweaw & safe modewation >w<',
-    intro: 'wewwitten fwom scwatch ~ swash commands onwy, and evewy wepwy is a nyeat wittwe cawd ♡',
-    items: [
-      '⚖️ sanctions expwainyed in DMs, and a case fiwe fow each membew',
-      '📋 pwetty wogs, with evewy action cwedited to the wight mod uwu',
-      '🪪 /info cawds fow membews, sewvews, wowes & invites',
-      '🎀 wewcome cawds dwawn as images, wowe menyus, scheduwed annyouncements',
-      "🛡️ and when it's needed: anti-waid, automod pwesets, nyightwy backups",
-    ],
-    badges: [
-      img(badge('', 'TypeScwipt', '3178C6', 'typescript'), 'TypeScript'),
-      img(badge('discowd.js', 'v14', '5865F2', 'discord'), 'discord.js v14'),
-      img(badge('vewsion', 'v2 ✧', '8b5cf6'), 'Version 2'),
-    ],
+  roxy: {
+    name: 'roxy ♪',
+    tag: 'the cawm of the evenying ☾ · pwivate',
+    chips: ['🎧 youw spotify, owiginyaw sound', '💬 she tawks, with hew moods', '🌙 mood pwaywists', '🎤 wywics & fiwtews', '🎮 bwind tests'],
   },
-  talion: {
-    title: '🪙 talion',
-    tagline: 'what goes awound comes awound ฅ^•ﻌ•^ฅ',
-    intro: 'a casinyo, econyomy & wpg bot ~ evewy sewvew gets its own econyomy and tunyes it with <code>/config</code>',
-    items: [
-      '🎰 bwackjack, swots with a mystewy jackpot, wouwette, howse wacing',
-      '🎭 cwiminyaw & civiw weputation, jaiw, jobs, bwack mawket, achievements',
-      '🌍 fwench ow engwish, fowwowing youw discowd wanguage',
-      '🔒 tawents awe 100% viwtuaw ~ nyevew bought, nyevew sowd :3',
-    ],
-    badges: [
-      img(badge('', 'JavaScwipt', 'F7DF1E', 'javascript', 'black'), 'JavaScript'),
-      img(badge('discowd.js', 'v14', '5865F2', 'discord'), 'discord.js v14'),
-      img(badge('status', 'in devewopment >w<', 'f472b6'), 'Status: in development'),
-    ],
+  eris: {
+    name: '⚔ eris',
+    tag: 'the enyewgy of the day ☀︎ · coming soon',
+    chips: ['duews & touwnyaments ⚔️', '7 swowd wanks 🗡️', 'goaws & stweaks 🏋️', 'a guiwd 🛡️', '“go eat.” 🍙'],
   },
-  echo: {
-    title: '🎫 echo <sup>nyew ✧</sup>',
-    tagline: 'a weaw human answews evewy ticket ♡',
-    intro: 'membews open a ticket in a pwivate channyew ow wight in theiw DMs, and the staff takes it fwom thewe ~',
-    items: [
-      '💬 pwivate channyew ow DMs, the membew picks',
-      "🌸 a wive panyew: who's awound in the team, usuaw wait time",
-      '🙋 a “cwaim” button, twansfews, questions pew topic',
-      '📜 twanscwipts in the wogs, and a 1 to 5 ⭐ wating at the end',
-      '🌍 fwench ow engwish, fowwowing youw discowd wanguage',
-    ],
-    badges: [
-      img(badge('', 'TypeScwipt', '3178C6', 'typescript'), 'TypeScript'),
-      img(badge('discowd.js', 'v14', '5865F2', 'discord'), 'discord.js v14'),
-      img(badge('status', 'in devewopment >w<', 'f472b6'), 'Status: in development'),
-    ],
-  },
+  posterAlt: 'roxy, my private music bot, for the night, and eris, coming soon, for the day',
   now: [
-    "🌷 powishing ego v2 with my fwiends' feedback uwu",
-    '🫧 buiwding the nyobiwitus website: a page fow each bot, pwus aww the docs',
-    '🗺️ teaching my bots mowe wanguages nya~',
+    '🌷 finyishing woxy, my music bot ♪',
+    '⚔️ dweaming up ewis, she comes nyext >:3',
+    '🫧 buiwding the nyobiwitus website ✧',
   ],
   locale: '',
   streakAlt: 'GitHub streak',
   catAlt: 'a pixel cat walking by',
+  skyAlt: 'the sky over seoul, right now',
   snakeAlt: 'A snake eating my contribution graph',
   bye: '≽^•⩊•^≼ <i>*waves pawsies*</i> ᓚ₍⑅^..^₎♡',
   footer: 'thx fow stopping by nya~ ♡',
@@ -183,7 +125,7 @@ const ko = {
   other: 'https://github.com/Ukadev-fs',
   switcher: '<a href="#">engwish</a> ⋆ <b>한국어</b>',
   font: 'Jua',
-  typing: ['아, 안녕~ ukadev다냥 ♡', '디스코드 봇 만든다냥 uwu', 'ego v2 나왔다냥 owo ✧', 'talion ~ 카지노, 경제, rpg >w<'],
+  typing: ['아, 안녕~ ukadev다냥 ♡', '디스코드 봇 만든다냥 uwu', 'roxy ~ 포근한 밤을 위한 음악이다냥 ♪', 'eris ~ 곧 와서 훈련시켜 줄 거다냥 >:3'],
   h: {
     about: '˚₊‧꒰ა 소개다냥 ໒꒱ ‧₊˚',
     bots: '˚₊‧꒰ა 내 쪼끄만 봇들 ໒꒱ ‧₊˚ owo',
@@ -195,67 +137,31 @@ const ko = {
   about: [
     '아, 안녕하세용~ **ukadev**다냥! 팀 **nobilitus**랑 디스코드 봇을 만들어용 (˶ᵔ ᵕ ᵔ˶)',
     '재미로 이것저것 코딩하구, 상상력이 엄청 풍부하다냥 (,,>﹏<,,)',
-    '내 봇들은 프랑스어랑 영어를 한다냥~',
-    '꿈: talion을 디스코드 1등 카지노 봇으로 만들기 ✧ 냥냥',
+    '새로운 걸 배우는 게 늘 좋구, 머리 쓰는 걸 좋아한다냥 ✧',
+    '게임? 너무 많아서 몇 개만 고를 수가 없다냥 >w<',
+    '귀에는 24시간 음악이 흐른다냥 ♪ 그래서 roxy가 있는 거야 uwu',
+    '꿈: roxy랑 eris가 진짜 살아 있는 것처럼 느껴지게 만들기 ♡',
   ],
-  ego: {
-    title: '🪞 ego <sup>v2 ✧</sup>',
-    tagline: '깔끔하고 안전한 모더레이션이다냥 >w<',
-    intro: '처음부터 다시 만들었다냥 ~ 슬래시 명령어만 쓰구, 모든 답장은 귀여운 카드로 온다냥 ♡',
-    items: [
-      '⚖️ 제재는 DM으로 설명해주구, 멤버마다 기록부가 있다냥',
-      '📋 예쁜 로그, 모든 조치는 진짜 모더레이터 이름으로 기록된다냥 uwu',
-      '🪪 멤버, 서버, 역할, 초대 링크를 보여주는 /info 카드',
-      '🎀 이미지로 그린 환영 카드, 역할 메뉴, 예약 공지',
-      '🛡️ 필요할 땐: 레이드 방지, AutoMod 프리셋, 매일 밤 백업',
-    ],
-    badges: [
-      img(badge('', 'TypeScript', '3178C6', 'typescript'), 'TypeScript'),
-      img(badge('discord.js', 'v14', '5865F2', 'discord'), 'discord.js v14'),
-      img(badge('버전', 'v2 ✧', '8b5cf6'), '버전 v2'),
-    ],
+  roxy: {
+    name: 'roxy ♪',
+    tag: '포근한 저녁의 음악 ☾ · 비공개',
+    chips: ['🎧 원본 음질의 스포티파이', '💬 기분 따라 대화해준다냥', '🌙 기분 플레이리스트', '🎤 가사랑 필터', '🎮 블라인드 테스트'],
   },
-  talion: {
-    title: '🪙 talion',
-    tagline: '뿌린 대로 거둔다냥 ฅ^•ﻌ•^ฅ',
-    intro: '카지노, 경제, RPG 봇이다냥 ~ 서버마다 따로 경제가 있구, <code>/config</code>로 직접 설정할 수 있다냥',
-    items: [
-      '🎰 블랙잭, 미스터리 잭팟 슬롯머신, 룰렛, 경마',
-      '🎭 범죄·시민 평판, 감옥, 직업, 암시장, 업적',
-      '🌍 디스코드 언어에 맞춰서 프랑스어나 영어로 대답한다냥',
-      '🔒 탤런트는 100% 가상 화폐다냥 ~ 사거나 팔 수 없어용 :3',
-    ],
-    badges: [
-      img(badge('', 'JavaScript', 'F7DF1E', 'javascript', 'black'), 'JavaScript'),
-      img(badge('discord.js', 'v14', '5865F2', 'discord'), 'discord.js v14'),
-      img(badge('상태', '개발 중 >w<', 'f472b6'), '상태: 개발 중'),
-    ],
+  eris: {
+    name: '⚔ eris',
+    tag: '낮의 에너지 ☀︎ · 곧 온다냥',
+    chips: ['결투랑 토너먼트 ⚔️', '검술 7단계 🗡️', '목표랑 연속 기록 🏋️', '길드 🛡️', '「가서 먹어.」 🍙'],
   },
-  echo: {
-    title: '🎫 echo <sup>새거다냥 ✧</sup>',
-    tagline: '모든 티켓에 진짜 사람이 답한다냥 ♡',
-    intro: '멤버는 비공개 채널이나 DM에서 티켓을 열구, 스태프가 이어받는다냥 ~',
-    items: [
-      '💬 비공개 채널이나 DM, 멤버가 고른다냥',
-      '🌸 실시간 패널: 지금 있는 스태프, 평소 대기 시간',
-      '🙋 「담당하기」 버튼, 티켓 넘기기, 주제별 질문',
-      '📜 로그에 남는 기록, 끝나면 별점 1~5 ⭐',
-      '🌍 디스코드 언어에 맞춰서 프랑스어나 영어로 대답한다냥',
-    ],
-    badges: [
-      img(badge('', 'TypeScript', '3178C6', 'typescript'), 'TypeScript'),
-      img(badge('discord.js', 'v14', '5865F2', 'discord'), 'discord.js v14'),
-      img(badge('상태', '개발 중 >w<', 'f472b6'), '상태: 개발 중'),
-    ],
-  },
+  posterAlt: '밤을 위한 비공개 음악 봇 roxy, 낮을 위한 곧 올 eris',
   now: [
-    '🌷 친구들 피드백으로 ego v2 다듬는 중이다냥',
-    '🫧 nobilitus 웹사이트 만드는 중: 봇별 페이지랑 문서 전부',
-    '🗺️ 봇들한테 새로운 언어 가르치는 중이다냥~',
+    '🌷 음악 봇 roxy 마무리하는 중이다냥 ♪',
+    '⚔️ 다음은 eris, 구상하는 중이다냥 >:3',
+    '🫧 nobilitus 웹사이트 만드는 중이다냥 ✧',
   ],
   locale: 'ko',
   streakAlt: 'GitHub 연속 기여',
   catAlt: '지나가는 픽셀 고양이',
+  skyAlt: '지금 서울의 하늘',
   snakeAlt: '기여 그래프를 먹는 뱀',
   bye: '≽^•⩊•^≼ <i>*꾹꾹이*</i> ᓚ₍⑅^..^₎♡',
   footer: '들러줘서 고마워용 냥~ ♡',
@@ -274,8 +180,6 @@ const pageHtml = (theme, blocks) => `<!doctype html><html><head><meta charset="u
   .markdown-body.fit { width: max-content; padding: 2px 12px; }
   .markdown-body .anchor { display: none; }
   .markdown-body table tr, .markdown-body table td { background: transparent !important; }
-  #s-bots tr:nth-child(2) ul { columns: 2; column-gap: 32px; }
-  #s-bots li { break-inside: avoid; }
 </style></head><body>
 ${blocks.map((b) => `<article class="markdown-body${b.fit ? ' fit' : ''}" id="s-${b.id}">${b.html}</article>`).join('\n')}
 </body></html>`;
@@ -316,6 +220,13 @@ for (const t of [en, ko]) {
     }
   }
 
+  // L'affiche a son propre fond : une seule image pour les deux thèmes.
+  await page.setContent(posterHtml(t), { waitUntil: 'networkidle' });
+  await page.evaluate(() => document.fonts.ready);
+  const posterFile = join(ROOT, 'assets', t.lang, 'poster.png');
+  await page.locator('#poster').screenshot({ path: posterFile, omitBackground: true });
+  const posterUrl = `${RAW}/assets/${t.lang}/poster.png?v=${createHash('sha1').update(readFileSync(posterFile)).digest('hex').slice(0, 8)}`;
+
   const shot = (id) => {
     const b = blocks.find((x) => x.id === id);
     const dark = shots[`${id}-dark`];
@@ -330,9 +241,13 @@ for (const t of [en, ko]) {
 
 <p align="center">${still(typing(t.font, t.typing), plain(t.typing[0]))}</p>
 
+${still(`${SKY}/sky-${t.lang}.svg`, t.skyAlt, ' width="100%"')}
+
 ${shot('about')}
 
 ${shot('bots')}
+
+<p align="center">${still(posterUrl, t.posterAlt, ' width="830"')}</p>
 
 ${shot('tools')}
 
